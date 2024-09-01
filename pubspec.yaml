@@ -1,0 +1,38 @@
+name: spotify
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=3.5.0-138.0.dev <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+  
+  assets:
+  - assets/fonts/
+  - assets/images/
+  - assets/vectors/
+
+  fonts:
+  - family: Satoshi
+    fonts:
+      - assest: assets/fonts/Satoshi-Black.ttf
+        weight: 900
+      - assest: assets/fonts/Satoshi-Bold.ttf
+        weight: 600
+      - assest: assets/fonts/Satoshi-Medium.ttf
+        weight: 500
+      - assest: assets/fonts/Satoshi-Regular.ttf
+        weight: 400
+      - assest: assets/fonts/Satoshi-Light.ttf
+        weight: 300
