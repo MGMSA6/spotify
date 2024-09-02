@@ -10,6 +10,9 @@ dependencies:
   flutter:
     sdk: flutter
 
+  cupertino_icons: ^1.0.2
+  flutter_svg:
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -19,20 +22,20 @@ flutter:
   uses-material-design: true
   
   assets:
-  - assets/fonts/
-  - assets/images/
-  - assets/vectors/
+    - assets/fonts/
+    - assets/images/
+    - assets/vectors/
 
   fonts:
-  - family: Satoshi
-    fonts:
-      - assest: assets/fonts/Satoshi-Black.ttf
-        weight: 900
-      - assest: assets/fonts/Satoshi-Bold.ttf
-        weight: 600
-      - assest: assets/fonts/Satoshi-Medium.ttf
-        weight: 500
-      - assest: assets/fonts/Satoshi-Regular.ttf
-        weight: 400
-      - assest: assets/fonts/Satoshi-Light.ttf
-        weight: 300
+    - family: Satoshi
+      fonts:
+        - asset: assets/fonts/Satoshi-Black.ttf
+          weight: 900
+        - asset: assets/fonts/Satoshi-Bold.ttf
+          weight: 600
+        - asset: assets/fonts/Satoshi-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Satoshi-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Satoshi-Light.ttf
+          weight: 300
