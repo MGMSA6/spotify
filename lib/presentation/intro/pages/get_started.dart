@@ -4,6 +4,8 @@ import 'package:spotify/common/widgets/button/basic_app_button.dart';
 import 'package:spotify/core/config/assets/app_images.dart';
 import 'package:spotify/core/config/assets/app_vectors.dart';
 import 'package:spotify/core/config/theme/app_colors.dart';
+import 'package:spotify/presentation/choose_mode/pages/choose_mode.dart';
+import 'package:spotify/utils/strings.dart';
 
 class GetStartedPage extends StatelessWidget {
   const GetStartedPage({super.key});
@@ -35,9 +37,10 @@ class GetStartedPage extends StatelessWidget {
                 ),
                 const Spacer(),
                 const Text(
-                  'Enjoy Listening To Music',
+                  AppStrings.welcomeMessage,
                   style: TextStyle(
-                      fontWeight: FontWeight.bold,
+                      fontFamily: 'Satoshi',
+                      fontWeight: FontWeight.w600,
                       color: Colors.white,
                       fontSize: 18),
                 ),
@@ -45,9 +48,9 @@ class GetStartedPage extends StatelessWidget {
                   height: 21,
                 ),
                 const Text(
-                  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                  AppStrings.welcomeMessage1,
                   style: TextStyle(
-                      fontWeight: FontWeight.w500,
+                      fontWeight: FontWeight.w400,
                       color: AppColors.grey,
                       fontSize: 13),
                   textAlign: TextAlign.center,
@@ -57,13 +60,13 @@ class GetStartedPage extends StatelessWidget {
                 ),
                 BasicAppButton(
                     onPressed: () {
-                      // Navigator.push(
-                      //     context,
-                      //     MaterialPageRoute(
-                      //         builder: (BuildContext context) =>
-                      //             const ChooseModePage()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (BuildContext context) =>
+                                  const ChooseModePage()));
                     },
-                    title: 'Get Started')
+                    title: AppStrings.getStarted)
               ],
             ),
           ),

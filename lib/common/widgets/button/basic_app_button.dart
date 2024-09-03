@@ -16,7 +16,7 @@ class BasicAppButton extends StatelessWidget {
         ),
         child: Text(
           title,
-          style: TextStyle(color: Colors.white),
+          style: const TextStyle(color: Colors.white),
         ));
   }
 }
