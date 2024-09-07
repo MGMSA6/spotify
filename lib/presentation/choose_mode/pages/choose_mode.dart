@@ -7,6 +7,7 @@ import 'package:spotify/common/widgets/button/basic_app_button.dart';
 import 'package:spotify/core/config/assets/app_images.dart';
 import 'package:spotify/core/config/assets/app_vectors.dart';
 import 'package:spotify/core/config/theme/app_colors.dart';
+import 'package:spotify/presentation/auth/signup_signin.dart';
 import 'package:spotify/presentation/choose_mode/bloc/theme_cubit.dart';
 import 'package:spotify/utils/strings.dart';
 
@@ -145,11 +146,11 @@ class ChooseModePage extends StatelessWidget {
                 ),
                 BasicAppButton(
                     onPressed: () {
-                      // Navigator.push(
-                      //     context,
-                      //     MaterialPageRoute(
-                      //         builder: (BuildContext context) =>
-                      //             const ChooseModePage()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (BuildContext context) =>
+                                  const SignupSignin()));
                     },
                     title: AppStrings.continueTxt)
               ],
