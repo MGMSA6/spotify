@@ -11,4 +11,16 @@ class AppStrings {
       "Spotify is a proprietary Swedish audio streaming and media services provider";
   static const String register = "Register";
   static const String signIn = "Sign In";
+  static const String satoshi = "Satoshi";
+  static const String fullName = "Full Name";
+  static const String email = "Enter Email";
+  static const String userName = "Enter Username Or Email";
+  static const String password = "Password";
+  static const String createAcct = "Create Account";
+  static const String doHaveAcct = "Do you have an account?";
+  static const String support = "If You Need Any Support";
+  static const String click = "click here";
+  static const String notAMember = "Not A Member ?";
+  static const String registerNow = "Register Now";
+  static const String recoverPassword = "Recovery Password";
 }

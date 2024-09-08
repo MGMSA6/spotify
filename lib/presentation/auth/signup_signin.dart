@@ -6,6 +6,7 @@ import 'package:spotify/common/widgets/button/basic_app_button.dart';
 import 'package:spotify/core/config/assets/app_images.dart';
 import 'package:spotify/core/config/assets/app_vectors.dart';
 import 'package:spotify/core/config/theme/app_colors.dart';
+import 'package:spotify/presentation/auth/register.dart';
 import 'package:spotify/utils/strings.dart';
 
 class SignupSignin extends StatelessWidget {
@@ -16,9 +17,9 @@ class SignupSignin extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          Padding(
-            padding: const EdgeInsets.only(left: 10),
-            child: const BasicAppBar(),
+          const Padding(
+            padding: EdgeInsets.only(left: 10),
+            child: BasicAppBar(),
           ),
           Align(
             alignment: Alignment.topRight,
@@ -42,29 +43,29 @@ class SignupSignin extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   SvgPicture.asset(AppVectors.logo),
-                  SizedBox(
+                  const SizedBox(
                     height: 55,
                   ),
-                  Text(
+                  const Text(
                     AppStrings.welcomeMessage,
                     style: TextStyle(
                         fontSize: 20,
-                        fontFamily: 'Satoshi',
+                        fontFamily: AppStrings.satoshi,
                         fontWeight: FontWeight.w600),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 21,
                   ),
-                  Text(
+                  const Text(
                     AppStrings.signUpText,
                     style: TextStyle(
                         fontSize: 13,
-                        fontFamily: 'Satoshi',
+                        fontFamily: AppStrings.satoshi,
                         fontWeight: FontWeight.w600,
                         color: AppColors.grey),
                     textAlign: TextAlign.center,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 30,
                   ),
                   Row(
@@ -72,8 +73,15 @@ class SignupSignin extends StatelessWidget {
                       Expanded(
                           flex: 1,
                           child: BasicAppButton(
-                              onPressed: () {}, title: AppStrings.register)),
-                      SizedBox(
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const Register()));
+                              },
+                              title: AppStrings.register)),
+                      const SizedBox(
                         width: 20,
                       ),
                       Expanded(
@@ -84,7 +92,7 @@ class SignupSignin extends StatelessWidget {
                               AppStrings.signIn,
                               style: TextStyle(
                                   fontSize: 16,
-                                  fontFamily: 'Satoshi',
+                                  fontFamily: AppStrings.satoshi,
                                   fontWeight: FontWeight.w500,
                                   color: context.isDarkMode
                                       ? Colors.white

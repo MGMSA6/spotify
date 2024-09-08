@@ -4,7 +4,6 @@ import 'package:spotify/common/widgets/button/basic_app_button.dart';
 import 'package:spotify/core/config/assets/app_images.dart';
 import 'package:spotify/core/config/assets/app_vectors.dart';
 import 'package:spotify/core/config/theme/app_colors.dart';
-import 'package:spotify/presentation/auth/signUp_signIn.dart';
 import 'package:spotify/presentation/choose_mode/pages/choose_mode.dart';
 import 'package:spotify/utils/strings.dart';
 
@@ -40,7 +39,7 @@ class GetStartedPage extends StatelessWidget {
                 const Text(
                   AppStrings.welcomeMessage,
                   style: TextStyle(
-                      fontFamily: 'Satoshi',
+                      fontFamily: AppStrings.satoshi,
                       fontWeight: FontWeight.w600,
                       color: Colors.white,
                       fontSize: 18),

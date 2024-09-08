@@ -48,7 +48,7 @@ class ChooseModePage extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 22,
                     color: Colors.white,
-                    fontFamily: 'Satoshi',
+                    fontFamily: AppStrings.satoshi,
                     fontWeight: FontWeight.w600, // Medium weight
                   ),
                 ),
@@ -91,7 +91,7 @@ class ChooseModePage extends StatelessWidget {
                           AppStrings.darkMode,
                           style: TextStyle(
                               fontSize: 14,
-                              fontFamily: 'Satoshi',
+                              fontFamily: AppStrings.satoshi,
                               color: AppColors.textColorGrey,
                               fontWeight: FontWeight.w500),
                         )
@@ -133,7 +133,7 @@ class ChooseModePage extends StatelessWidget {
                           AppStrings.lightMode,
                           style: TextStyle(
                               fontSize: 14,
-                              fontFamily: 'Satoshi',
+                              fontFamily: AppStrings.satoshi,
                               color: AppColors.textColorGrey,
                               fontWeight: FontWeight.w500),
                         )
