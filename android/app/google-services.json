@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "312954599679",
+    "project_id": "spotify-deae7",
+    "storage_bucket": "spotify-deae7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:312954599679:android:593e2be3c17493b7bfb4ca",
+        "android_client_info": {
+          "package_name": "com.example.spotify"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA__asER80Nx7RJIA_OjrbwepEQ-8-yA1E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

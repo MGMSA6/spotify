@@ -7,4 +7,7 @@ class AppVectors {
   static const String light = '${basePath}light_mode$format';
   static const String topPattern = '${basePath}top_pattern$format';
   static const String bottomPattern = '${basePath}bottom_pattern$format';
+  static const String google = '${basePath}google$format';
+  static const String appleWhite = '${basePath}apple_white$format';
+  static const String appleBlack = '${basePath}apple_black$format';
 }

@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:spotify/common/helper/is_dark_mode.dart';
 import 'package:spotify/common/widgets/appbar/app_bar.dart';
 import 'package:spotify/common/widgets/button/basic_app_button.dart';
 import 'package:spotify/core/config/assets/app_vectors.dart';
@@ -30,9 +31,6 @@ class Register extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               _registerText(),
-              const SizedBox(
-                height: 10,
-              ),
               _supportText(context),
               const SizedBox(
                 height: 10,
@@ -49,7 +47,11 @@ class Register extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              BasicAppButton(onPressed: () {}, title: AppStrings.createAcct)
+              BasicAppButton(onPressed: () {}, title: AppStrings.createAcct),
+              const SizedBox(
+                height: 20,
+              ),
+              _seperator(context),
             ],
           ),
         ),
@@ -91,7 +93,7 @@ class Register extends StatelessWidget {
 
   Widget _supportText(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 30),
+      padding: const EdgeInsets.symmetric(vertical: 10),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -120,7 +122,7 @@ class Register extends StatelessWidget {
 
   Widget _signText(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 30),
+      padding: const EdgeInsets.symmetric(vertical: 20),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -134,7 +136,7 @@ class Register extends StatelessWidget {
           ),
           TextButton(
               onPressed: () {
-                Navigator.push(context,
+                Navigator.pushReplacement(context,
                     MaterialPageRoute(builder: (context) => const Signin()));
               },
               child: const Text(
@@ -148,5 +150,75 @@ class Register extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  Widget _seperator(BuildContext context) {
+    return Column(children: [
+      Row(
+        children: <Widget>[
+          Expanded(
+            child: Container(
+              height: 2.0,
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [
+                    context.isDarkMode
+                        ? AppColors.separate1
+                        : AppColors.separate3,
+                    context.isDarkMode
+                        ? AppColors.separate2
+                        : AppColors.separate4,
+                  ],
+                  begin: Alignment.centerLeft,
+                  end: Alignment.centerRight,
+                ),
+              ),
+            ),
+          ),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 10.0),
+            child: Text(
+              "Or",
+              style: TextStyle(
+                fontSize: 16.0,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+          Expanded(
+            child: Container(
+              height: 2.0,
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [
+                    context.isDarkMode
+                        ? AppColors.separate1
+                        : AppColors.separate3,
+                    context.isDarkMode
+                        ? AppColors.separate2
+                        : AppColors.separate4,
+                  ],
+                  begin: Alignment.centerLeft,
+                  end: Alignment.centerRight,
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+      const SizedBox(
+        height: 20,
+      ),
+      Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          SvgPicture.asset(AppVectors.google),
+          context.isDarkMode
+              ? SvgPicture.asset(AppVectors.appleWhite)
+              : SvgPicture.asset(AppVectors.appleBlack)
+        ],
+      )
+    ]);
   }
 }

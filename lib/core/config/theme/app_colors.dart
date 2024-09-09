@@ -10,5 +10,9 @@ class AppColors {
   static const textColorGrey1 = Color(0xff797979);
   static const textLabelDark = Color(0xffa7a7a7);
   static const textLabelLight = Color(0xff383838);
-    static const textBlue = Color(0xff288ce9);
+  static const textBlue = Color(0xff288ce9);
+  static const separate1 = Color(0xff5b5b5b);
+  static const separate2 = Color(0xff252525);
+  static const separate3 = Color(0xffb0b0b0);
+  static const separate4 = Color(0xffd3d3d3);
 }
