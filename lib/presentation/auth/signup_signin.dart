@@ -78,8 +78,7 @@ class SignupSignin extends StatelessWidget {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) =>
-                                            const Register()));
+                                        builder: (context) => Register()));
                               },
                               title: AppStrings.register)),
                       const SizedBox(

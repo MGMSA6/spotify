@@ -7,11 +7,19 @@ import 'package:spotify/common/widgets/appbar/app_bar.dart';
 import 'package:spotify/common/widgets/button/basic_app_button.dart';
 import 'package:spotify/core/config/assets/app_vectors.dart';
 import 'package:spotify/core/config/theme/app_colors.dart';
+import 'package:spotify/data/models/create_user_req.dart';
+import 'package:spotify/domain/usecases/auth/register_usecase.dart';
 import 'package:spotify/presentation/auth/signin.dart';
+import 'package:spotify/presentation/root/pages/root.dart';
+import 'package:spotify/service_locator.dart';
 import 'package:spotify/utils/strings.dart';
 
 class Register extends StatelessWidget {
-  const Register({super.key});
+  Register({super.key});
+
+  final TextEditingController _fullName = TextEditingController();
+  final TextEditingController _email = TextEditingController();
+  final TextEditingController _password = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +55,26 @@ class Register extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              BasicAppButton(onPressed: () {}, title: AppStrings.createAcct),
+              BasicAppButton(
+                  onPressed: () async {
+                    var result = await sl<RegisterUsecase>().call(
+                        params: CreateUserReq(
+                            fullName: _fullName.text.toString(),
+                            email: _email.text.toString(),
+                            password: _password.text.toString()));
+
+                    result.fold((l) {
+                      var snackBar = SnackBar(content: Text(l));
+                      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                    }, (r) {
+                      Navigator.pushAndRemoveUntil(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const RootPage()),
+                          (root) => false);
+                    });
+                  },
+                  title: AppStrings.createAcct),
               const SizedBox(
                 height: 20,
               ),
@@ -72,6 +99,7 @@ class Register extends StatelessWidget {
 
   Widget _fullNameField(BuildContext context) {
     return TextField(
+      controller: _fullName,
       decoration: const InputDecoration(hintText: AppStrings.fullName)
           .applyDefaults(Theme.of(context).inputDecorationTheme),
     );
@@ -79,6 +107,7 @@ class Register extends StatelessWidget {
 
   Widget _emailField(BuildContext context) {
     return TextField(
+      controller: _email,
       decoration: const InputDecoration(hintText: AppStrings.email)
           .applyDefaults(Theme.of(context).inputDecorationTheme),
     );
@@ -86,6 +115,7 @@ class Register extends StatelessWidget {
 
   Widget _passwordField(BuildContext context) {
     return TextField(
+      controller: _password,
       decoration: const InputDecoration(hintText: AppStrings.password)
           .applyDefaults(Theme.of(context).inputDecorationTheme),
     );
