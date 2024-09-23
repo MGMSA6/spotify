@@ -2,11 +2,12 @@ import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:spotify/data/models/create_user_req.dart';
+import 'package:spotify/data/models/signin_user_req.dart';
 
 abstract class AuthForebaseService {
   Future<Either> register(CreateUserReq createUserReq);
 
-  Future<void> signIn();
+  Future<Either> signIn(SigninUserReq signinUserReq);
 }
 
 class AuthForebaseServiceImpl extends AuthForebaseService {
@@ -32,7 +33,23 @@ class AuthForebaseServiceImpl extends AuthForebaseService {
   }
 
   @override
-  Future<void> signIn() {
-    throw UnimplementedError();
+  Future<Either> signIn(SigninUserReq signinUserReq) async {
+    try {
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+          email: signinUserReq.email, password: signinUserReq.password);
+
+      return const Right('Signin was successful!');
+    } on FirebaseAuthException catch (e) {
+      if (kDebugMode) {
+        print(e.message);
+      }
+      String message = '';
+      if (e.code == 'invalid-email') {
+        message = 'Not User found for this acccount';
+      } else if (e.code == 'invalid-credential') {
+        message = 'Wrong Password.';
+      }
+      return Left(message);
+    }
   }
 }
