@@ -25,8 +25,10 @@ Future<void> main() async {
 
     await initializeDependencies();
   } catch (e, stacktrace) {
+    if(kDebugMode){
     print('Initialization error: $e');
     print(stacktrace);
+    }
   }
   runApp(const MainApp());
 }

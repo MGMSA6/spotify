@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:spotify/common/helper/is_dark_mode.dart';
@@ -7,7 +6,6 @@ import 'package:spotify/common/widgets/button/basic_app_button.dart';
 import 'package:spotify/core/config/assets/app_vectors.dart';
 import 'package:spotify/core/config/theme/app_colors.dart';
 import 'package:spotify/data/models/signin_user_req.dart';
-import 'package:spotify/domain/usecases/auth/register_usecase.dart';
 import 'package:spotify/domain/usecases/signin_usecase.dart';
 import 'package:spotify/presentation/auth/register.dart';
 import 'package:spotify/presentation/root/pages/root.dart';
