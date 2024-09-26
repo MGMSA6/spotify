@@ -8,7 +8,7 @@ import 'package:spotify/core/config/theme/app_colors.dart';
 import 'package:spotify/data/models/create_user_req.dart';
 import 'package:spotify/domain/usecases/auth/register_usecase.dart';
 import 'package:spotify/presentation/auth/signin.dart';
-import 'package:spotify/presentation/root/pages/root.dart';
+import 'package:spotify/presentation/home/pages/home.dart';
 import 'package:spotify/service_locator.dart';
 import 'package:spotify/utils/strings.dart';
 
@@ -68,7 +68,7 @@ class Register extends StatelessWidget {
                       Navigator.pushAndRemoveUntil(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const RootPage()),
+                              builder: (context) => const HomePage()),
                           (root) => false);
                     });
                   },

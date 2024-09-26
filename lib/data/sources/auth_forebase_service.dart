@@ -20,7 +20,7 @@ class AuthForebaseServiceImpl extends AuthForebaseService {
 
       FirebaseFirestore.instance
           .collection('Users')
-          .add({'name': data.user?.displayName, 'email': data.user?.email});
+          .add({'name': createUserReq.fullName, 'email': data.user?.email});
 
       return const Right('Registration was successful!');
     } on FirebaseAuthException catch (e) {
