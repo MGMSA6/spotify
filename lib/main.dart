@@ -7,6 +7,7 @@ import 'package:path_provider/path_provider.dart';
 import 'package:spotify/core/config/theme/app_tehem.dart';
 import 'package:spotify/firebase_options.dart';
 import 'package:spotify/presentation/choose_mode/bloc/theme_cubit.dart';
+import 'package:spotify/presentation/home/pages/home.dart';
 import 'package:spotify/presentation/splash/pages/splash.dart';
 import 'package:spotify/service_locator.dart';
 
@@ -25,9 +26,9 @@ Future<void> main() async {
 
     await initializeDependencies();
   } catch (e, stacktrace) {
-    if(kDebugMode){
-    print('Initialization error: $e');
-    print(stacktrace);
+    if (kDebugMode) {
+      print('Initialization error: $e');
+      print(stacktrace);
     }
   }
   runApp(const MainApp());

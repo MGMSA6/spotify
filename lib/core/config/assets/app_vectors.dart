@@ -10,4 +10,5 @@ class AppVectors {
   static const String google = '${basePath}google$format';
   static const String appleWhite = '${basePath}apple_white$format';
   static const String appleBlack = '${basePath}apple_black$format';
+  static const String union = '${basePath}union$format';
 }

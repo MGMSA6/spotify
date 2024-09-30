@@ -5,7 +5,7 @@ import 'package:spotify/common/widgets/appbar/app_bar.dart';
 import 'package:spotify/common/widgets/button/basic_app_button.dart';
 import 'package:spotify/core/config/assets/app_vectors.dart';
 import 'package:spotify/core/config/theme/app_colors.dart';
-import 'package:spotify/data/models/signin_user_req.dart';
+import 'package:spotify/data/models/auth/signin_user_req.dart';
 import 'package:spotify/domain/usecases/signin_usecase.dart';
 import 'package:spotify/presentation/auth/register.dart';
 import 'package:spotify/presentation/home/pages/home.dart';
@@ -65,8 +65,7 @@ class Signin extends StatelessWidget {
                     }, (r) {
                       Navigator.pushAndRemoveUntil(
                           context,
-                          MaterialPageRoute(
-                              builder: (context) => const HomePage()),
+                          MaterialPageRoute(builder: (context) => HomePage()),
                           (root) => false);
                     });
                   },
